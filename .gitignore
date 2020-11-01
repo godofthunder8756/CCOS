@@ -1,0 +1,6 @@
+
+# Tells git to not track these types of files 
+*.tmp
+*.o
+*.bin
+*.flp
