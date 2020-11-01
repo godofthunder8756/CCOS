@@ -1,4 +1,4 @@
-
+[bits 16]
 
 jmp EnterProtectedMode
 
@@ -27,7 +27,6 @@ EnableA20:
 %include "SimplePaging.asm"
 
 StartProtectedMode:
-	
 	mov ax, dataseg
 	mov ds, ax
 	mov ss, ax
@@ -47,7 +46,10 @@ StartProtectedMode:
 	mov [0xb8012], byte 'L'
 	mov [0xb8014], byte 'D'
 
+
+
 	call DetectCPUID
+
 	call DetectLongMode
 	call SetUpIdentityPaging
 	call EditGDT
@@ -61,6 +63,7 @@ Start64Bit:
 	mov rax, 0x4f204f204f204f20
 	mov ecx, 500
 	rep stosq
+	jmp $
 	call _start
 	jmp $
 
