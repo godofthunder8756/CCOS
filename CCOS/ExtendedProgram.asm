@@ -1,5 +1,5 @@
 
-[org 0x7e00]
+
 jmp EnterProtectedMode
 
 %include "gdt.asm"
@@ -49,11 +49,12 @@ StartProtectedMode:
 
 	call DetectCPUID
 	call DetectLongMode
-	call SetUpSimplePaging
+	call SetUpIdentityPaging
 	call EditGDT
 	jmp codeseg:Start64Bit
 
 [bits 64]
+[extern _start]
 
 Start64Bit:
 	mov edi, 0xb8000
