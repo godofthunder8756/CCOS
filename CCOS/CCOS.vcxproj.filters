@@ -48,6 +48,9 @@
     <None Include="Binaries.asm">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="IDT.asm">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kernel.cpp">
@@ -65,12 +68,18 @@
     <ClCompile Include="TextModeColorCodes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IDT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt">
       <Filter>Source Files</Filter>
     </Text>
     <Text Include="compileasm.bat">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="logoascii.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>

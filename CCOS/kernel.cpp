@@ -1,14 +1,17 @@
 #include "TextPrint.cpp"
+#include "IDT.cpp"
 
-extern const char Test[];
+extern const char Logo[];
+extern const char Info[];
+
 
 extern "C" void _start() {
 	SetCursorPosition(PositionFromCoords(0, 0));
-	PrintString("Cherry Cola\n\rOperating System\n\r", BACKGROUND_BLINKINGRED | FOREGROUND_CYAN);
-	PrintString(HexToString(0x1234abcd));
-	ClearScreen();
+	InitializeIDT();
 
-	PrintString(Test);
-
+	PrintString(Logo);
+	PrintString("\n\r");
+	PrintString(Info);
+	PrintString("\n\r");
 	return;
 }
