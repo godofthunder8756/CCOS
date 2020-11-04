@@ -139,16 +139,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="Binaries.asm" />
     <None Include="bootloader.asm" />
     <None Include="CPUID.asm" />
     <None Include="DiskRead.asm" />
     <None Include="ExtendedProgram.asm" />
     <None Include="gdt.asm" />
+    <None Include="link.ld" />
     <None Include="print.asm" />
     <None Include="SimplePaging.asm" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="IO.cpp" />
     <ClCompile Include="kernel.cpp" />
+    <ClCompile Include="TextModeColorCodes.cpp" />
+    <ClCompile Include="TextPrint.cpp" />
+    <ClCompile Include="Typedefs.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="compileasm.bat" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

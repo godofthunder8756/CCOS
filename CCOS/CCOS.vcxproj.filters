@@ -42,10 +42,36 @@
     <None Include="SimplePaging.asm">
       <Filter>Source Files\Sector 2+</Filter>
     </None>
+    <None Include="link.ld">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Binaries.asm">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kernel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TextPrint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Typedefs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextModeColorCodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="compileasm.bat">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
