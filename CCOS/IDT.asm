@@ -26,6 +26,7 @@ idtDescriptor:
 
 [extern isr1_handler]
 isr1:
+
 	PUSHALL
 	call isr1_handler
 	POPALL
