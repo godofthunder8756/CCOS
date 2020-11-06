@@ -19,11 +19,13 @@ void InitializeIDT(){
 		_idt[t].zero = 0;
 		_idt[t].offset_low = (uint_16)(((uint_64)&isr1 & 0x000000000000fff));
 		_idt[t].offset_mid = (uint_16)(((uint_64)&isr1 & 0x0000000ffff0000) >> 16);
-		_idt[t].offset_high = (uint_64)(((uint_64)&isr1 & 0xffffffff00000000) >> 32);
+		_idt[t].offset_high = (uint_32)(((uint_64)&isr1 & 0xffffffff00000000) >> 32);
 		_idt[t].ist = 0;
 		_idt[t].selector = 0x08;
 		_idt[t].types_attr = 0x8e;
 	}
+
+	RemapPic();
 
 	outb(0x21, 0xfd);
 	outb(0xa1, 0xff);
