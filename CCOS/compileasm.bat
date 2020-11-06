@@ -4,9 +4,9 @@ nasm ExtendedProgram.asm -f elf64 -o ExtendedProgram.o
 
 nasm Binaries.asm -f elf64 -o Binaries.o
 
-x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "kernel.cpp" -o "kernel.o"
+wsl $WSLENV/x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "kernel.cpp" -o "kernel.o"
 
-custom-ld -T"link.ld"
+wsl $WSLENV/x86_64-elf-ld -T"link.ld"
 
 copy /b bootloader.bin+kernel.bin bootloader.flp
 
